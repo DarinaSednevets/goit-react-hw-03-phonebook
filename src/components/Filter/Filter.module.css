@@ -1,0 +1,9 @@
+.input {
+  margin-left: 40px;
+  border-radius: 5px;
+  outline: none;
+  background: rgb(231, 231, 231);
+}
+.input:focus {
+  background: rgb(255, 255, 255);
+}

@@ -1,5 +1,8 @@
+ul {
+  padding-inline-start: 0;
+}
 body {
-  background: rgb(156, 158, 123);
+  background: rgba(87, 87, 87, 0.8);
   font-size: 22px;
   padding: 40px;
 }

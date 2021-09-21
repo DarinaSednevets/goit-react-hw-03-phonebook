@@ -1,0 +1,21 @@
+.list {
+  list-style: none;
+  width: 600px;
+  margin-bottom: -10px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.btn {
+  background: rgb(252, 251, 221);
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  color: black;
+}
+.btn:hover {
+  background: rgb(255, 0, 0);
+  transition: 200ms ease-out;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from "./components/Form/Form"
 import Filter from './components/Filter/Filter';
 import ContactList from "./components/ContactList/ContactList"
-import initialContacts from "./components/initialContacts.json"
+
 
 
 import "./base.css"
@@ -11,9 +11,22 @@ import shortId from 'shortid';
 
 class App extends Component {
   state = {
-    contacts: initialContacts,
+    contacts: [],
     filter: ''
   }
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem("contacts"));
+    if (contacts) {
+      this.setState({ contacts: contacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
+
   addContact = ({ name, number }) => {
     if (this.state.contacts.some(elm => elm.name === name)) {
       console.log(alert(`${name} is already in contacts`));
